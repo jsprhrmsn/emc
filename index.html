@@ -16,9 +16,10 @@
       position: relative;
       overflow: hidden;
 
-      background: linear-gradient(270deg, #222, #111, #000);
+      /* 🎨 Colors sampled from your photo */
+      background: linear-gradient(270deg, #0f1114, #1a1d22, #0a1320);
       background-size: 600% 600%;
-      animation: gradientMove 20s ease infinite;
+      animation: gradientMove 25s ease infinite;
     }
 
     @keyframes gradientMove {
@@ -40,10 +41,10 @@
     .card {
       background: #111;
       color: #fff;
-      padding: 2.8rem 3.2rem;
+      padding: 2.6rem 3rem;
       border-radius: 20px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-      max-width: 520px;
+      max-width: 560px;
       width: calc(100% - 2rem);
       text-align: center;
       z-index: 1;
@@ -69,8 +70,8 @@
     .photo {
       width: 100%;
       max-width: 380px;
-      border-radius: 12px;
-      margin: 1rem auto 1.5rem;
+      border-radius: 14px;
+      margin: 1rem auto 1.2rem;
       display: block;
     }
 
@@ -78,31 +79,59 @@
       display: flex;
       justify-content: center;
       gap: 1.2rem;
-      margin-top: 1.5rem;
+      margin: 1.2rem 0 1.5rem;
     }
 
     .socials a {
       display: inline-block;
       width: 56px;
       height: 56px;
-      border-radius: 12px;
+      border-radius: 14px;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .socials img {
       width: 100%;
       height: 100%;
-      border-radius: 12px;
+      border-radius: 14px;
+      filter: brightness(0) invert(1); /* forces white if needed */
     }
 
-    /* 🎛 Hover animation */
-    .socials a:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 20px rgba(255,255,255,0.35);
+    /* 🌀 Spin + glow per platform */
+    .youtube:hover {
+      transform: rotate(10deg) scale(1.15);
+      box-shadow: 0 0 20px #ff0000;
+    }
+
+    .tiktok:hover {
+      transform: rotate(-10deg) scale(1.15);
+      box-shadow: 0 0 20px #00f2ea;
+    }
+
+    .soundcloud:hover {
+      transform: rotate(10deg) scale(1.15);
+      box-shadow: 0 0 20px #ff5500;
+    }
+
+    .mixcloud:hover {
+      transform: rotate(-10deg) scale(1.15);
+      box-shadow: 0 0 20px #52aadf;
+    }
+
+    .player {
+      margin-top: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 120px;
+      border: none;
     }
 
     footer {
-      margin-top: 1.8rem;
+      margin-top: 1.5rem;
       font-size: 0.8rem;
       color: #aaa;
     }
@@ -115,13 +144,6 @@
       .socials a {
         width: 48px;
         height: 48px;
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: linear-gradient(270deg, #0a0a0a, #15001f, #000);
-        background-size: 600% 600%;
       }
     }
 
@@ -144,18 +166,26 @@
     >
 
     <div class="socials">
-      <a href="https://www.youtube.com/@electronicmusicclass" target="_blank" aria-label="YouTube">
+      <a class="youtube" href="https://www.youtube.com/@electronicmusicclass" target="_blank" aria-label="YouTube">
         <img src="https://jsprhrmsn.github.io/sig/youtube.png" alt="YouTube">
       </a>
-      <a href="https://www.tiktok.com/@electronicmusicclass" target="_blank" aria-label="TikTok">
+      <a class="tiktok" href="https://www.tiktok.com/@electronicmusicclass" target="_blank" aria-label="TikTok">
         <img src="https://jsprhrmsn.github.io/sig/tiktok.png" alt="TikTok">
       </a>
-      <a href="https://soundcloud.com/jsprhrmsn" target="_blank" aria-label="SoundCloud">
+      <a class="soundcloud" href="https://soundcloud.com/jsprhrmsn" target="_blank" aria-label="SoundCloud">
         <img src="https://jsprhrmsn.github.io/sig/soundcloud.png" alt="SoundCloud">
       </a>
-      <a href="https://www.mixcloud.com/jsprhrmsn/" target="_blank" aria-label="Mixcloud">
+      <a class="mixcloud" href="https://www.mixcloud.com/jsprhrmsn/" target="_blank" aria-label="Mixcloud">
         <img src="https://jsprhrmsn.github.io/sig/mixcloud.png" alt="Mixcloud">
       </a>
+    </div>
+
+    <!-- 🎵 Embedded Mixcloud player -->
+    <div class="player">
+      <iframe 
+        src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fjsprhrmsn%2F"
+        allow="autoplay"
+      ></iframe>
     </div>
 
     <footer>

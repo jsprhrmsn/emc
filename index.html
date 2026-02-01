@@ -62,7 +62,7 @@
 
     h1 {
       margin-top: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       letter-spacing: 1px;
     }
 
@@ -70,8 +70,16 @@
       width: 100%;
       max-width: 380px;
       border-radius: 14px;
-      margin: 1rem auto 1.2rem;
+      margin: 1rem auto 0.6rem;
       display: block;
+    }
+
+    .bio {
+      max-width: 420px;
+      margin: 0.4rem auto 1.2rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #ccc;
     }
 
     .socials {
@@ -90,7 +98,6 @@
       border-radius: 50%;
       background: transparent;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
-
       animation: pulseGlow 4s ease-in-out infinite;
     }
 
@@ -101,7 +108,6 @@
       filter: brightness(0) invert(1);
     }
 
-    /* 🫀 Dimmer idle glow */
     @keyframes pulseGlow {
       0%   { box-shadow: 0 0 4px rgba(255,255,255,0.12); }
       50%  { box-shadow: 0 0 10px rgba(255,255,255,0.25); }
@@ -112,7 +118,6 @@
       animation: none;
     }
 
-    /* 🌈 Softer hover glow */
     .youtube:hover {
       transform: scale(1.15);
       box-shadow: 
@@ -142,7 +147,7 @@
     }
 
     .player {
-      margin-top: 1.5rem;
+      margin-top: 1.2rem;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -153,26 +158,26 @@
       border: none;
     }
 
-    /* 📧 Email contact */
     .email-contact {
-      margin-top: 1.2rem;
+      margin-top: 1.4rem;
     }
 
     .email-contact a {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
       color: #fff;
       text-decoration: none;
-      font-size: 0.9rem;
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      transition: box-shadow 0.25s ease, transform 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .email-contact a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(255,255,255,0.4);
+      transform: scale(1.08);
+      box-shadow: 0 0 16px rgba(255,255,255,0.5);
     }
 
     footer {
@@ -210,6 +215,10 @@
       class="photo"
     >
 
+    <p class="bio">
+      Dub techno & electronic music mixes. Hardware, loops and deep atmospheres.
+    </p>
+
     <div class="socials">
       <a class="youtube" href="https://www.youtube.com/@electronicmusicclass" target="_blank">
         <img src="https://jsprhrmsn.github.io/emc/youtube.png" alt="YouTube">
@@ -232,10 +241,9 @@
       ></iframe>
     </div>
 
-    <!-- 📧 Email below player -->
     <div class="email-contact">
       <a href="mailto:dj_jspr@proton.me">
-        📧
+        📧 Contact me
       </a>
     </div>
 

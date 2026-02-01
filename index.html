@@ -16,7 +16,6 @@
       position: relative;
       overflow: hidden;
 
-      /* 🎨 Colors sampled from your photo */
       background: linear-gradient(270deg, #0f1114, #1a1d22, #0a1320);
       background-size: 600% 600%;
       animation: gradientMove 25s ease infinite;
@@ -83,54 +82,53 @@
     }
 
     .socials a {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       width: 56px;
       height: 56px;
-      border-radius: 14px;
+      border-radius: 50%;
+      background: transparent;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-      /* 🫀 Idle pulse */
       animation: pulseGlow 4s ease-in-out infinite;
     }
 
     .socials img {
-      width: 100%;
-      height: 100%;
-      border-radius: 14px;
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
       filter: brightness(0) invert(1);
     }
 
-    /* 🫀 Soft idle glow */
     @keyframes pulseGlow {
       0%   { box-shadow: 0 0 6px rgba(255,255,255,0.15); }
       50%  { box-shadow: 0 0 14px rgba(255,255,255,0.35); }
       100% { box-shadow: 0 0 6px rgba(255,255,255,0.15); }
     }
 
-    /* ✋ Stop pulse on hover */
     .socials a:hover {
       animation: none;
     }
 
-    /* 🌀 Spin + glow per platform */
     .youtube:hover {
-      transform: rotate(10deg) scale(1.15);
-      box-shadow: 0 0 20px #ff0000;
+      transform: scale(1.15);
+      box-shadow: 0 0 18px #ff0000, 0 0 35px rgba(255,0,0,0.6);
     }
 
     .tiktok:hover {
-      transform: rotate(-10deg) scale(1.15);
-      box-shadow: 0 0 20px #00f2ea;
+      transform: scale(1.15);
+      box-shadow: 0 0 18px #00f2ea, 0 0 35px rgba(0,242,234,0.6);
     }
 
     .soundcloud:hover {
-      transform: rotate(10deg) scale(1.15);
-      box-shadow: 0 0 20px #ff5500;
+      transform: scale(1.15);
+      box-shadow: 0 0 18px #ff5500, 0 0 35px rgba(255,85,0,0.6);
     }
 
     .mixcloud:hover {
-      transform: rotate(-10deg) scale(1.15);
-      box-shadow: 0 0 20px #52aadf;
+      transform: scale(1.15);
+      box-shadow: 0 0 18px #52aadf, 0 0 35px rgba(82,170,223,0.6);
     }
 
     .player {
@@ -181,21 +179,20 @@
     >
 
     <div class="socials">
-      <a class="youtube" href="https://www.youtube.com/@electronicmusicclass" target="_blank" aria-label="YouTube">
+      <a class="youtube" href="https://www.youtube.com/@electronicmusicclass" target="_blank">
         <img src="https://jsprhrmsn.github.io/sig/youtube.png" alt="YouTube">
       </a>
-      <a class="tiktok" href="https://www.tiktok.com/@electronicmusicclass" target="_blank" aria-label="TikTok">
+      <a class="tiktok" href="https://www.tiktok.com/@electronicmusicclass" target="_blank">
         <img src="https://jsprhrmsn.github.io/sig/tiktok.png" alt="TikTok">
       </a>
-      <a class="soundcloud" href="https://soundcloud.com/jsprhrmsn" target="_blank" aria-label="SoundCloud">
+      <a class="soundcloud" href="https://soundcloud.com/jsprhrmsn" target="_blank">
         <img src="https://jsprhrmsn.github.io/sig/soundcloud.png" alt="SoundCloud">
       </a>
-      <a class="mixcloud" href="https://www.mixcloud.com/jsprhrmsn/" target="_blank" aria-label="Mixcloud">
+      <a class="mixcloud" href="https://www.mixcloud.com/jsprhrmsn/" target="_blank">
         <img src="https://jsprhrmsn.github.io/sig/mixcloud.png" alt="Mixcloud">
       </a>
     </div>
 
-    <!-- 🎵 Embedded Mixcloud player -->
     <div class="player">
       <iframe 
         src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fjsprhrmsn%2F"
